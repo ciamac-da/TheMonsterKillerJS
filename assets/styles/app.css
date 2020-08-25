@@ -3,7 +3,9 @@ html {
 }
 
 body {
-  background: #2c2c2c;
+  background-image: url("../../img/1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h2 {
