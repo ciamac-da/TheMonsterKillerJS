@@ -1,5 +1,5 @@
 const ATTACK_VALUE = 10;
-const MOSTER_ATTACK_VALUE = 14; 
+const MOSTER_ATTACK_VALUE = 10; 
 
 let chosenMaxLife = 100;
 let currentMonsterHealth = chosenMaxLife;
@@ -12,10 +12,12 @@ function attackHandler() {
   currentMonsterHealth -= damage;
   const playerDamage = dealPlayerDamage(MOSTER_ATTACK_VALUE);
   currentPlayerHealth -= playerDamage;
-  if( currentMonsterHealth <= 0 ){
+  if( currentMonsterHealth <= 0  && currentPlayerHealth > 0 ){
     alert("You won!")
-  } else if( currentPlayerHealth <= 0) {
+  } else if( currentPlayerHealth <= 0 && currentMonsterHealth > 0 ) {
     alert("Monster won!")
+  } else if( currentMonsterHealth <= 0 && currentPlayerHealth <= 0 ){
+    alert("Draw!")
   }
 }
 
