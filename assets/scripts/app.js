@@ -55,7 +55,7 @@ function writeToLog(ev, val,  playerHealth, monsterHealth ){
 
 
 function reset(){
-  currentPlayerHealth = chosenMaxLife
+  currentMonsterHealth = chosenMaxLife
   currentPlayerHealth = chosenMaxLife
   resetGame(chosenMaxLife)
 }
@@ -76,7 +76,7 @@ if(currentPlayerHealth <= 0 && hasBonusLife){
   removeBonusLife();
   currentPlayerHealth = initialPlayerHealth
   alert("Warrior would be dead but the bonus life saved him/her!")
-  setPlayerHealth(chosenMaxLife)
+  setPlayerHealth(initialPlayerHealth)
 }
 
 
