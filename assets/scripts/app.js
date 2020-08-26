@@ -73,10 +73,11 @@ function endRound(){
       );
 
 if(currentPlayerHealth <= 0 && hasBonusLife){
+  hasBonusLife = false;
   removeBonusLife();
   currentPlayerHealth = initialPlayerHealth
-  alert("Warrior would be dead but the bonus life saved him/her!")
   setPlayerHealth(initialPlayerHealth)
+  alert("Warrior would be dead but the bonus life saved him/her!")
 }
 
 
@@ -98,7 +99,6 @@ if( currentMonsterHealth <= 0  && currentPlayerHealth > 0 ){
   )
 } else if( currentMonsterHealth <= 0 && currentPlayerHealth <= 0 ){
   alert("  WTF A DRAW!")
-  reset()
   writeToLog(
     LOG_EVENT_GAME_OVER,
     "  BLOODY HELL!DRAW! BUT HOW?:)",
