@@ -13,6 +13,11 @@ function adjustHealthBars(maxLife) {
   playerHealthBar.max = maxLife;
   playerHealthBar.value = maxLife;
 }
+function adjustHealthBarOfPlayer(playerMax){
+  playerHealthBar.max = playerMax;
+  playerHealthBar.value = playerMax;
+}
+
 
 function dealMonsterDamage(damage) {
   const dealtDamage = Math.random() * damage;
