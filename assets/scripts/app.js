@@ -1,5 +1,6 @@
-const ATTACK_VALUE = 10; // Player hits the Monster
-const STRONG_ATTACK_VALUE = 30; // Super hit! They gonna hit each other
+
+const ATTACK_VALUE = 50; // Player hits the Monster
+const STRONG_ATTACK_VALUE = 10; // Super hit! They gonna hit each other
 const MONSTER_ATTACK_VALUE = 25; // Monster hits the player back!
 //const STRONG_MONSTER_ATTACK_VALUE = 20; I think I don't need it anymore!
 const HEAL_VALUE = 17; // HEAL the Player!
@@ -11,7 +12,7 @@ const LOG_EVENT_PLAYER_ATTACK = "PLAYER_ATTACK";
 const LOG_EVENT_PLAYER_STRONG_ATTACK = "PLAYER_STRONG_ATTACK";
 const LOG_EVENT_MONSTER_ATTACK = "MONSTER_ATTACK";
 const LOG_EVENT_PLAYER_HEAL = "PLAYER_HEAL";
-const LOG_EVENT_GAME_OVER = "GAME_OVER";
+const LOG_EVENT_GAME_OVER = "GAME-OVER";
 
 
 // This is how to set max life!
@@ -83,12 +84,12 @@ if( currentMonsterHealth <= 0  && currentPlayerHealth > 0 ){
   alert("Warrior won!")
   writeToLog(
     LOG_EVENT_GAME_OVER,
-    "WARRIOR WON",
+    "  WARRIOR WON",
     currentPlayerHealth,
     currentMonsterHealth
   )
 } else if( currentPlayerHealth <= 0 && currentMonsterHealth > 0 ) {
-  alert("Monster won!")
+  alert("  Monster won!")
   writeToLog(
     LOG_EVENT_GAME_OVER,
     "MONSTER WON",
@@ -96,11 +97,11 @@ if( currentMonsterHealth <= 0  && currentPlayerHealth > 0 ){
     currentMonsterHealth
   )
 } else if( currentMonsterHealth <= 0 && currentPlayerHealth <= 0 ){
-  alert("WTF A DRAW!")
+  alert("  WTF A DRAW!")
   reset()
   writeToLog(
     LOG_EVENT_GAME_OVER,
-    "BLOODY HELL!DRAW! BUT HOW?:)",
+    "  BLOODY HELL!DRAW! BUT HOW?:)",
     currentPlayerHealth,
     currentMonsterHealth
   )
@@ -167,6 +168,9 @@ endRound()
 
 function printLogHandler(){
   console.log(battleLog);
+  lastLog.innerText = 
+  battleLog[battleLog.length-1].event + 
+  battleLog[battleLog.length-1].value 
 }
 
 attackBtn.addEventListener('click', attackHandler);
