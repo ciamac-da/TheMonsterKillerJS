@@ -1,5 +1,5 @@
 const ATTACK_VALUE = 10; // Player hits the Monster
-const STRONG_ATTACK_VALUE = 20; // Super hit! They gonna hit each other
+const STRONG_ATTACK_VALUE = 30; // Super hit! They gonna hit each other
 const MONSTER_ATTACK_VALUE = 25; // Monster hits the player back!
 //const STRONG_MONSTER_ATTACK_VALUE = 20; I think I don't need it anymore!
 const HEAL_VALUE = 17; // HEAL the Player!
@@ -67,8 +67,9 @@ function endRound(){
    writeToLog(
      LOG_EVENT_MONSTER_ATTACK, 
      playerDamage, 
+     currentPlayerHealth,
      currentMonsterHealth, 
-     currentPlayerHealth, );
+      );
 
 if(currentPlayerHealth <= 0 && hasBonusLife){
   removeBonusLife();
