@@ -15,7 +15,7 @@ const LOG_EVENT_GAME_OVER = "GAME_OVER";
 
 
 // This is how to set max life!
-const enteredValue = prompt("Maximum life for Warrior-Mouse and the Monster", "100"); 
+const enteredValue = prompt("Maximum life for Warrior and the Monster", "100"); 
 
 //let chosenMaxLife = 100; Don't need it anymore!
 let chosenMaxLife = parseInt(enteredValue);
@@ -35,7 +35,7 @@ function writeToLog(ev, val,  playerHealth, monsterHealth ){
  let logEntry = {
     event: ev,
     value: val,
-    finalPlayerHealth: playerHealth,
+    finalWarriorHealth: playerHealth,
     finalMonsterHealth: monsterHealth,
   };
   if(ev === LOG_EVENT_PLAYER_ATTACK){
@@ -73,16 +73,16 @@ function endRound(){
 if(currentPlayerHealth <= 0 && hasBonusLife){
   removeBonusLife();
   currentPlayerHealth = initialPlayerHealth
-  alert("Warrior-Mouse would be dead but the bonus life saved him/her!")
+  alert("Warrior would be dead but the bonus life saved him/her!")
   setPlayerHealth(chosenMaxLife)
 }
 
 
 if( currentMonsterHealth <= 0  && currentPlayerHealth > 0 ){
-  alert("Warrior-Mouse won!")
+  alert("Warrior won!")
   writeToLog(
     LOG_EVENT_GAME_OVER,
-    "WARRIOR-MOUSE WON",
+    "WARRIOR WON",
     currentPlayerHealth,
     currentMonsterHealth
   )
@@ -95,7 +95,7 @@ if( currentMonsterHealth <= 0  && currentPlayerHealth > 0 ){
     currentMonsterHealth
   )
 } else if( currentMonsterHealth <= 0 && currentPlayerHealth <= 0 ){
-  alert("You have a draw!")
+  alert("WTF A DRAW!")
   reset()
   writeToLog(
     LOG_EVENT_GAME_OVER,
@@ -148,7 +148,7 @@ function strongAttackHandler() {
 function healPlayerHandler(){
   let healValue;
   if(currentPlayerHealth >= chosenMaxLife - HEAL_VALUE){
-    alert("You can't heal more than Warrior-Mous's maximux initial health!")
+    alert("You can't heal more than Warrior´s maximux initial health!")
     healValue = chosenMaxLife - currentPlayerHealth
   } else{
     healValue = HEAL_VALUE
