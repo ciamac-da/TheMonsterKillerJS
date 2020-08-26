@@ -1,6 +1,6 @@
 
 const ATTACK_VALUE = 15; // Player hits the Monster
-const STRONG_ATTACK_VALUE = 25; // Super hit! They gonna hit each other
+const STRONG_ATTACK_VALUE = 30; // Super hit! They gonna hit each other
 const MONSTER_ATTACK_VALUE = 20; // Monster hits the player back!
 //const STRONG_MONSTER_ATTACK_VALUE = 20; I think I don't need it anymore!
 const HEAL_VALUE = 17; // HEAL the Player!
