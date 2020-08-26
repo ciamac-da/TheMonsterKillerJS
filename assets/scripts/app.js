@@ -93,7 +93,7 @@ if( currentMonsterHealth <= 0  && currentPlayerHealth > 0 ){
   alert("  Monster won!")
   writeToLog(
     LOG_EVENT_GAME_OVER,
-    "MONSTER WON",
+    " MONSTER WON",
     currentPlayerHealth,
     currentMonsterHealth
   )
