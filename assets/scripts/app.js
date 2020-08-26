@@ -18,11 +18,11 @@ const LOG_EVENT_GAME_OVER = "GAME-OVER";
 // This is how to set max life!
 const enteredValue = prompt("Maximum life for Warrior and the Monster", "100"); 
 
-//let chosenMaxLife = 100; Don't need it anymore!
+//let chosenMaxLife = 100; I think Don't need it anymore!
 let chosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
 
-if(isNaN(chosenMaxLife || chosenMaxLife <= 0 || chosenMaxLife > 100)){
+if(isNaN(chosenMaxLife) || chosenMaxLife <= 0 || chosenMaxLife > 100){
   chosenMaxLife = 100;
 }
 
