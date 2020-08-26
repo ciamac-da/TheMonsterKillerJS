@@ -10,6 +10,11 @@ body {
   font-family: 'Russo One', sans-serif;
   height: 100vh;
 }
+.theHeader{
+  color: #eee;
+  text-align: center;
+  padding-top: 20px;
+}
 
 h2 {
    font-size: 1.25rem;
