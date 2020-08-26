@@ -1,5 +1,6 @@
-html {
-  font-family: sans-serif;
+::root {
+  font-family: 'Russo One', sans-serif;
+  height: -webkit-fill-available;
 }
 
 body {
@@ -17,7 +18,7 @@ h2 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 5px;
-
+    align-items: center;
 }
 
 progress {
@@ -72,13 +73,14 @@ button:active {
 #bonus-life {
   font-weight: bold;
   color: white;
-  background: #ff0062;
-  border: 1px solid #ff0062;
+  background: red;
+  border: 2px solid black;
   padding: 0.15rem 0.5rem;
   border-radius: 10px;
   text-align: center;
   margin: 0 0.5rem;
   font-size: 15px;
+  width: fit-content;
 }
 .playerBar{
   background-color: white;
