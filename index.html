@@ -14,25 +14,27 @@
   </head>
   <body>
 
-    <div class="card" style="width: 23rem; margin: auto;">
-      <h2>MONSTER HEALTH</h2>
-      <div class="progress-bar playerBar">
+    <div class="cards">
+  <div class="card" style="width: 23rem; margin: auto;">
+    <h2>MONSTER HEALTH</h2>
+    <div class="progress-bar playerBar">
       <progress id="monster-health" max="100" value="100">100%</progress>
-      </div>
-      <h2>PLAYER HEALTH<span id="bonus-life">1 <img src="https://img.icons8.com/cotton/24/000000/like--v1.png"/></span></h2>
-      <div class="progress-bar playerBar">
-        <progress id="player-health" class="progress-bar" role="progressbar" max="100" value="100">100%</progress>
-      </div>
     </div>
-
-    <div class="card" style="width: 23rem; margin: auto;">
-      <button id="attack-btn">ATTACK</button>
-      <button id="strong-attack-btn">STRONG ATTACK</button>
-      <button id="heal-btn">HEAL</button>
-      <button id="log-btn">SHOW LOG</button>
+    <h2>PLAYER HEALTH<span id="bonus-life">1 <img src="https://img.icons8.com/cotton/24/000000/like--v1.png"/></span></h2>
+    <div class="progress-bar playerBar">
+      <progress id="player-health" class="progress-bar" role="progressbar" max="100" value="100">100%</progress>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
+  </div>
+  
+  <div class="card" style="width: 23rem; margin: auto;">
+    <button id="attack-btn" type="button" class="btn btn-warning">ATTACK</button>
+    <button id="strong-attack-btn" type="button" class="btn btn-danger">STRONG ATTACK</button>
+    <button id="heal-btn" type="button" class="btn btn-success">HEAL</button>
+    <button id="log-btn" type="button" class="btn btn-primary">SHOW LOG IN CONSOLE</button>
+  </div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
 </html>
