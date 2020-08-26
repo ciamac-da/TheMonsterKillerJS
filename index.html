@@ -3,24 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <a href="https://icons8.com/icon/64452/heart"></a>
     <title>Monster Killer</title>
     <link rel="stylesheet" href="assets/styles/app.css" />
     <script src="assets/scripts/vendor.js" defer></script>
     <script src="assets/scripts/app.js" defer></script>
   </head>
   <body>
-    <section id="health-levels">
+
+    <div class="card" style="width: 23rem; margin: auto;">
       <h2>MONSTER HEALTH</h2>
+      <div class="progress-bar playerBar">
       <progress id="monster-health" max="100" value="100">100%</progress>
-      <h2>PLAYER HEALTH<span id="bonus-life">1</span></h2>
-      <progress id="player-health" max="100" value="100">100%</progress>
-    </section>
-    <section id="controls">
+      </div>
+      <h2>PLAYER HEALTH<span id="bonus-life">1 <img src="https://img.icons8.com/cotton/24/000000/like--v1.png"/></span></h2>
+      <div class="progress-bar playerBar">
+        <progress id="player-health" class="progress-bar" role="progressbar" max="100" value="100">100%</progress>
+      </div>
+    </div>
+
+    <div class="card" style="width: 23rem; margin: auto;">
       <button id="attack-btn">ATTACK</button>
       <button id="strong-attack-btn">STRONG ATTACK</button>
       <button id="heal-btn">HEAL</button>
       <button id="log-btn">SHOW LOG</button>
-    </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </body>
 </html>
