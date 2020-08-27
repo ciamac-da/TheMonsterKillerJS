@@ -38,15 +38,37 @@ function writeToLog(ev, val,  playerHealth, monsterHealth ){
     finalWarriorHealth: playerHealth,
     finalMonsterHealth: monsterHealth,
   };
-  if(ev === LOG_EVENT_PLAYER_ATTACK){
- logEntry.target = "MONSTER";
-  } else if(ev === LOG_EVENT_PLAYER_STRONG_ATTACK){
- logEntry.target = "MONSTER";
-  } else if(ev === LOG_EVENT_PLAYER_HEAL){
- logEntry.target = "PLAYER";
-  } else if(ev === LOG_EVENT_GAME_OVER){
- logEntry
-  }
+ // if(ev === LOG_EVENT_PLAYER_ATTACK){
+ //logEntry.target = "MONSTER";
+ // } else if(ev === LOG_EVENT_PLAYER_STRONG_ATTACK){
+ //logEntry.target = "MONSTER";
+ // } else if(ev === LOG_EVENT_PLAYER_HEAL){
+ //logEntry.target = "PLAYER";
+ // } else if(ev === LOG_EVENT_GAME_OVER){
+ //logEntry
+ // }
+
+ // Using switch would be cleaner instead of if /else if
+switch(ev){
+  
+  case LOG_EVENT_PLAYER_ATTACK:
+  logEntry.target = "MONSTER";
+  break;
+  
+  case LOG_EVENT_PLAYER_STRONG_ATTACK:
+    logEntry.target = "MONSTER"
+    break;
+
+  case LOG_EVENT_PLAYER_HEAL:
+    logEntry.target = "PLAYER";
+    break;
+
+    case LOG_EVENT_GAME_OVER:
+      logEntry
+      break;
+      default:
+      logEntry = {}
+}
   battleLog.push(logEntry);
 }
 
