@@ -71,15 +71,15 @@ function endRound(){
      currentMonsterHealth, 
       );
 
-  // Hier ist echt ernst!!:)
+  // Hmmm hier ist echt ernst!!:)
 if(currentPlayerHealth <= 0 && hasBonusLife){
   hasBonusLife = false;
   removeBonusLife();
   currentPlayerHealth = initialPlayerHealth
   setPlayerHealth(initialPlayerHealth)
   alert("Warrior would be dead but the bonus life saved him/her!")
-  currentPlayerHealth = chosenMaxLife
-  //hmmmm soll ich eine neue Funktion für palyerHealth bauen!?? jo
+  currentPlayerHealth = chosenMaxLife 
+  // Make the WARRIOR great again;))
   adjustHealthBarOfPlayer(currentPlayerHealth);
 }
 
@@ -120,15 +120,19 @@ if(
 
 
 function attackMonster(mode){
-  let maxDamage;
-  let logEvent;
-if(mode === MODE_ATTACK){
-  maxDamage = ATTACK_VALUE;
-  logEvent = LOG_EVENT_PLAYER_ATTACK;
-}else if(mode === MODE_STRONG_ATTACK){
-  maxDamage = STRONG_ATTACK_VALUE;
-  logEvent = LOG_EVENT_PLAYER_STRONG_ATTACK;
-}
+  // much shorter and cleaner with turnary operator
+  const maxDamage = mode === MODE_ATTACK ? ATTACK_VALUE : STRONG_ATTACK_VALUE ;
+  const logEvent = mode === MODE_ATTACK ? LOG_EVENT_PLAYER_ATTACK : LOG_EVENT_PLAYER_STRONG_ATTACK; 
+  // let maxDamage;
+ // let logEvent;
+//  // Iw wanna comment this and use turnary operator
+//if(mode === MODE_ATTACK){
+//  maxDamage = ATTACK_VALUE;
+//  logEvent = LOG_EVENT_PLAYER_ATTACK;
+//}else if(mode === MODE_STRONG_ATTACK){
+//  maxDamage = STRONG_ATTACK_VALUE;
+//  logEvent = LOG_EVENT_PLAYER_STRONG_ATTACK;
+//}
 
 const damage = dealMonsterDamage(ATTACK_VALUE);
 currentMonsterHealth -= damage;
