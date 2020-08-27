@@ -140,5 +140,6 @@ button:active {
   .cards{
     display: inline-table;
     margin: 65px;
+    height: 610px;
   }
 }
