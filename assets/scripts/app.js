@@ -198,6 +198,16 @@ endRound()
 // um das letzte Index zu zugreifen! Dementsprechend brauche ich davon nur event und value 
 function printLogHandler(){
   console.log(battleLog);
+  
+  //for( i = 0 ; i < battleLog.length; i++){
+  //  console.log(battleLog[i])
+  //}
+  
+  // the same like previous for condition but this one is much shorter 
+  // in this situation you dont know which index like previous , you just get access to element
+  //for (const logEntry of battleLog){
+  //  console.log(logEntry)
+  //}
   lastLog.innerText = 
   battleLog[battleLog.length-1].event + 
   battleLog[battleLog.length-1].value 
