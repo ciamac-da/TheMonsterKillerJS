@@ -125,6 +125,12 @@ button:active {
   .cards{
     display: contents;
   }
+  .theHeader{
+    color: #eee;
+    text-align: center;
+    padding-top: 20px;
+    margin-left: 3px;
+  }
 
 }
 @media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
@@ -134,14 +140,73 @@ button:active {
   .cards{
     display: contents;
   }
+  body{
+    width: auto;
+  
+  }
 }
 @media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 @media (min-width:1280px) { 
-  /* hi-res laptops and desktops */ 
+  /* microsoft */ 
   .cards{
     display: inline-table;
     margin: 65px;
     height: 610px;
+  }
+}
+
+@media (width:640px)  { 
+  /* Microsoft Lumia550 */ 
+  .cards{
+    display: contents;
+  }
+  body{
+    width: auto;
+    display: table;
+  }
+  .theHeader{
+    color: #eee;
+    text-align: center;
+    padding-top: 20px;
+    margin-left: 110px;
+    margin-bottom: 32px;
+  }
+}
+@media (width:360px) { 
+  /* Nexus */ 
+  body{
+    width: auto;
+    display: table;
+  }
+}
+
+@media (width:412px) { 
+  /* Nexus */ 
+  body{
+    display: table;
+    margin: auto;
+  }
+}
+
+@media (width:480px) { 
+  /* Nokia N9 */
+  body{
+    display: table;
+    margin: auto;
+  }
+}
+@media (width:411px) { 
+  /* Pixel2 */
+  body{
+    display: table;
+    margin: auto;
+  }
+}
+@media (width:414px) { 
+  /* Iphone6/7 */
+  body{
+    display: table;
+    margin: auto;
   }
 }
