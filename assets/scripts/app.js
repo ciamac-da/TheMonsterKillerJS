@@ -14,16 +14,29 @@ const LOG_EVENT_PLAYER_HEAL = "PLAYER_HEAL";
 const LOG_EVENT_GAME_OVER = "GAME-OVER";
 
 
-// Ich setze das Leben auf Maximal
-const enteredValue = prompt("Maximum life for Warrior and the Monster", "100"); 
 
 //let chosenMaxLife = 100; Vllt brauch ich es nicht mehr!
-let chosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
 
-if(isNaN(chosenMaxLife) || chosenMaxLife <= 0 || chosenMaxLife > 100){
-  chosenMaxLife = 100;
+function getMaxLiveValue(){
+  // Ich setze das Leben auf Maximal
+  const enteredValue = prompt("Maximum life for Warrior and the Monster", "100"); 
+  let parsedValue = parseInt(enteredValue);
+  if(isNaN(parsedValue) || parsedValue <= 0 || parsedValue > 100){
+   throw {message: "Invalid user input!"}
+  }
+  return parsedValue
 }
+let chosenMaxLife;
+
+try {
+  chosenMaxLife = getMaxLiveValue();
+}catch(error){
+  console.log(error);
+  chosenMaxLife = 100;
+  alert("you entered something wrong, default value of 100 was used!")
+}
+
 
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
@@ -101,6 +114,7 @@ if(currentPlayerHealth <= 0 && hasBonusLife){
   setPlayerHealth(initialPlayerHealth)
   alert("Warrior would be dead but the bonus life saved him/her!")
   currentPlayerHealth = chosenMaxLife 
+  console.log("after bonus life",currentPlayerHealth)
   // Make the WARRIOR great again;))
   adjustHealthBarOfPlayer(currentPlayerHealth);
 }
@@ -131,11 +145,13 @@ if( currentMonsterHealth <= 0  && currentPlayerHealth > 0 ){
     currentMonsterHealth
   )
 }
+// Different reset conditions
 if(
-  currentMonsterHealth <= 0  && currentPlayerHealth > 0 ||  
-  currentPlayerHealth <= 0 && currentMonsterHealth > 0 || 
-  currentMonsterHealth <= 0 && currentPlayerHealth <= 0 
+  currentMonsterHealth <= 0  && currentPlayerHealth > 0 ||  // Warrioir won
+  currentPlayerHealth <= 0 && currentMonsterHealth > 0 ||  // MOnster won
+  currentMonsterHealth <= 0 && currentPlayerHealth <= 0 // Both of them are dead
   ){
+    // If ficed then reset the game!
   reset()
 }
 }
